@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SolarUX - Cargadores Solares Portátiles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Custom Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      /* Product Card Hover Effect */
+      .product-card {
+        transition: all 0.3s ease;
+      }
+
+      .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Hero Section Animation */
+      .hero-title {
+        animation: fadeIn 1s ease-out;
+      }
+
+      .hero-subtitle {
+        animation: fadeIn 1.2s ease-out;
+      }
+
+      .hero-cta {
+        animation: fadeIn 1.4s ease-out;
+      }
+
+      /* Scroll Reveal Animation */
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s ease;
+      }
+
+      .scroll-reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <header
+      class="bg-gradient-to-r from-yellow-500 to-orange-600 text-white fixed w-full top-0 z-50"
+    >
+      <nav
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <div class="flex items-center">
+          <i class="fas fa-sun text-3xl mr-3 animate-pulse"></i>
+          <h1 class="text-2xl font-bold">SolarUX</h1>
+        </div>
+        <ul class="flex space-x-6 nav-menu">
+          <li>
+            <a href="#inicio" class="hover:text-yellow-200 nav-link">Inicio</a>
+          </li>
+          <li>
+            <a href="#productos" class="hover:text-yellow-200 nav-link"
+              >Productos</a
+            >
+          </li>
+          <li>
+            <a href="#nosotros" class="hover:text-yellow-200 nav-link"
+              >Nosotros</a
+            >
+          </li>
+          <li>
+            <a href="#contacto" class="hover:text-yellow-200 nav-link"
+              >Contacto</a
+            >
+          </li>
+        </ul>
+        <div class="mobile-menu-btn hidden">
+          <i class="fas fa-bars text-2xl cursor-pointer"></i>
+        </div>
+      </nav>
+    </header>
+
+    <main class="pt-20">
+      <section
+        id="inicio"
+        class="container mx-auto px-4 py-16 grid md:grid-cols-2 gap-8 items-center"
+      >
+        <div>
+          <h2 class="text-4xl font-bold mb-4 text-orange-600 hero-title">
+            Energía Solar Portátil
+          </h2>
+          <p class="text-xl mb-6 hero-subtitle">
+            Cargadores solares innovadores para mantener tus dispositivos
+            alimentados en cualquier lugar, sin importar el terreno o la
+            aventura.
+          </p>
+          <div class="flex space-x-4 hero-cta">
+            <a
+              href="#productos"
+              class="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition"
+              >Ver Productos</a
+            >
+            <a
+              href="#contacto"
+              class="border-2 border-orange-500 text-orange-500 px-6 py-3 rounded-lg hover:bg-orange-50 transition"
+              >Contáctanos</a
+            >
+          </div>
+        </div>
+        <div class="hero-image">
+          <img
+            src="/api/placeholder/600/400"
+            alt="Cargador Solar SolarUX"
+            class="rounded-lg shadow-xl hover:scale-105 transition-transform"
+          />
+        </div>
+      </section>
+
+      <section id="productos" class="bg-white py-16 scroll-reveal">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold text-center mb-12 text-orange-600">
+            Nuestros Productos
+          </h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div
+              class="bg-gray-100 p-6 rounded-lg text-center shadow-md product-card hover:shadow-lg transition-all duration-300"
+            >
+              <i class="fas fa-bolt text-4xl text-orange-500 mb-4"></i>
+              <h3 class="text-xl font-semibold mb-3">SolarUX Aventura</h3>
+              <p>
+                Diseñado para excursionistas y aventureros. Resistente al agua y
+                a golpes.
+              </p>
+            </div>
+            <div
+              class="bg-gray-100 p-6 rounded-lg text-center shadow-md product-card hover:shadow-lg transition-all duration-300"
+            >
+              <i class="fas fa-mobile-alt text-4xl text-orange-500 mb-4"></i>
+              <h3 class="text-xl font-semibold mb-3">SolarUX Urbano</h3>
+              <p>
+                Compacto y elegante, perfecto para profesionales en movimiento.
+              </p>
+            </div>
+            <div
+              class="bg-gray-100 p-6 rounded-lg text-center shadow-md product-card hover:shadow-lg transition-all duration-300"
+            >
+              <i class="fas fa-car text-4xl text-orange-500 mb-4"></i>
+              <h3 class="text-xl font-semibold mb-3">SolarUX Viajero</h3>
+              <p>
+                Ideal para viajes largos, con capacidad de carga para múltiples
+                dispositivos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="nosotros"
+        class="container mx-auto px-4 py-16 grid md:grid-cols-2 gap-8 items-center scroll-reveal"
+      >
+        <div>
+          <img
+            src="/api/placeholder/600/400"
+            alt="Equipo SolarUX"
+            class="rounded-lg shadow-xl hover:scale-105 transition-transform"
+          />
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold mb-4 text-orange-600">
+            Nuestra Misión
+          </h2>
+          <p class="text-xl mb-6">
+            En SolarUX creemos en un mundo más sostenible. Nuestros cargadores
+            solares no solo mantienen tus dispositivos funcionando, sino que
+            también contribuyen a reducir la huella de carbono.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-3"></i>
+              Tecnología de última generación
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-3"></i>
+              Diseño ergonómico y ligero
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-3"></i>
+              Compromiso con la sostenibilidad
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contacto" class="bg-gray-100 py-16 scroll-reveal">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold text-center mb-12 text-orange-600">
+            Contáctanos
+          </h2>
+          <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md">
+            <form id="contactForm">
+              <div class="mb-4">
+                <label class="block mb-2">Nombre</label>
+                <input
+                  type="text"
+                  class="w-full px-3 py-2 border rounded-lg"
+                  placeholder="Tu nombre"
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <label class="block mb-2">Correo Electrónico</label>
+                <input
+                  type="email"
+                  class="w-full px-3 py-2 border rounded-lg"
+                  placeholder="tu@email.com"
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <label class="block mb-2">Mensaje</label>
+                <textarea
+                  class="w-full px-3 py-2 border rounded-lg"
+                  rows="4"
+                  placeholder="Escribe tu mensaje"
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition"
+              >
+                Enviar Mensaje
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <p>&copy; 2024 SolarUX. Todos los derechos reservados.</p>
+        <div class="flex space-x-4">
+          <a href="#" class="hover:text-orange-500"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="#" class="hover:text-orange-500"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="#" class="hover:text-orange-500"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Smooth Scroll Navigation
+        const navLinks = document.querySelectorAll(".nav-link");
+        navLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute("href");
+            const targetSection = document.querySelector(targetId);
+            targetSection.scrollIntoView({ behavior: "smooth" });
+          });
+        });
+
+        // Scroll Reveal Animation
+        const scrollRevealElements =
+          document.querySelectorAll(".scroll-reveal");
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        }, observerOptions);
+
+        scrollRevealElements.forEach((element) => {
+          observer.observe(element);
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+        const navMenu = document.querySelector(".nav-menu");
+
+        mobileMenuBtn.addEventListener("click", () => {
+          navMenu.classList.toggle("hidden");
+          mobileMenuBtn.querySelector("i").classList.toggle("fa-bars");
+          mobileMenuBtn.querySelector("i").classList.toggle("fa-times");
+        });
+
+        // Form Submission (simulated)
+        const contactForm = document.getElementById("contactForm");
+        contactForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          alert("¡Gracias por tu mensaje! Nos pondremos en contacto pronto.");
+          contactForm.reset();
+        });
+      });
+    </script>
+  </body>
+</html>
